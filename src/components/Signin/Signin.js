@@ -3,11 +3,11 @@ import React from 'react';
 
 
 
-class Signin extends React.component => {
+class Signin extends React.component {
 
-constructor(){
-  super();
-  this.state{
+constructor(props){
+  super(props);
+  this.state={
     signInEmail:'',
     signInPassword:''
   }
@@ -22,7 +22,7 @@ constructor(){
   }
 
   render() {
-    const { onRouteChange }= this.this.props ;
+    const { onRouteChange }= this.props ;
 return (
 <article className="br3 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l shadow-5 mw6 center">
    <main className="pa4 black-80">
