@@ -28,16 +28,19 @@ class Signin extends React.Component  {
       method:'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        email:this.state.signInEmail,
         password: this.state.signInPassword
       })
-
     })
-      
-    this.props.onRouteChange ('home');
-  }
+        .then(response => response.json())
+        .then(user => {
+        if(user.id){
+        this.props.loadUser(user);
+        this.props.onRouteChange('home');
+    }
+  })
+}
 
-  render(){
+  render() {
     const {onRouteChange} = this.props;
       return (
 <article className="br3 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l shadow-5 mw6 center">
